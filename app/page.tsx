@@ -46,14 +46,14 @@ type LearnerProfile = {
 type StartMode = "existing" | "new";
 
 const CLASS_OPTIONS = [
-  "Year 5 Eucalyptus",
-  "Year 5 Hawthorne",
-  "Year 5 Sycamore",
-  "Year 5 Willow",
+  "Year 6 Elder",
+  "Year 6 Juniper",
+  "Year 6 Walnut",
+ 
 ];
 
-const REGISTRY_KEY = "year5-pupil-registry";
-const CURRENT_PROFILE_KEY = "year5-current-profile";
+const REGISTRY_KEY = "year6-pupil-registry";
+const CURRENT_PROFILE_KEY = "year6-current-profile";
 
 const lessons: Lesson[] = [
   {
