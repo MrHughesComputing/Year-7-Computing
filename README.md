@@ -1,61 +1,53 @@
-# APSR Year 5 Computing App v2
+# APSR Year 7 Computing App
 
-This upgraded version adds three major features:
+This application is a browser-based computing platform designed for use at Aldenham Prep School Riyadh.
 
-- Microsoft 365 login scaffolding using NextAuth
-- Teacher analytics dashboard
-- Scratch project integration inside each lesson
+It delivers a structured Year 7 computing curriculum through interactive lessons, quizzes, and progress tracking.
 
-## What is live in this version
+---
 
-- Demo login for pupils and teachers
-- Teacher analytics view using browser data plus demo class data
-- Scratch editor links and starter project placeholders in every lesson
-- Public Vercel deployment support
+## 🚀 Core Features
 
-## What still needs setup for live Microsoft sign-in
+- Pupil login system (localStorage-based)
+- Class grouping (Year 7A / Year 7B)
+- Structured lesson delivery:
+  - Key Question
+  - Misconceptions
+  - Success Criteria
+  - Teaching Content
+  - Step-by-step practical guide (Scratch)
+- 10-question quizzes per lesson:
+  - Randomised questions
+  - Randomised answer order
+  - Score and feedback displayed
+  - No retakes
+- Lesson completion tracking
+- Screenshot upload for project evidence
+- Teacher dashboard:
+  - Password protected
+  - Progress tracking
+  - Basic analytics
 
-To enable real Microsoft / Entra login in Vercel, add these environment variables:
+---
 
-- `NEXTAUTH_SECRET`
-- `NEXTAUTH_URL`
-- `MICROSOFT_CLIENT_ID`
-- `MICROSOFT_CLIENT_SECRET`
-- `MICROSOFT_TENANT_ID`
-- `NEXT_PUBLIC_ENABLE_MICROSOFT_LOGIN=true`
-- `NEXT_PUBLIC_SCHOOL_DOMAIN=your-school-domain.com`
-- `TEACHER_EMAILS=email1@domain.com,email2@domain.com`
-- `NEXT_PUBLIC_TEACHER_CODE=APSR-Y5`
+## 🧱 Technical Stack
 
-## Azure / Entra callback URL
+- Next.js (App Router)
+- TypeScript
+- localStorage (no backend)
+- Vercel deployment
 
-In your Microsoft Entra app registration, add this redirect URI:
+---
 
-`https://your-domain/api/auth/callback/azure-ad`
+## ⚠️ Important System Constraints
 
-For preview deployments, you can add the Vercel preview URL version as well.
+- Data is stored locally in the browser
+- No cross-device syncing
+- No user authentication system
+- Teacher dashboard uses a simple password (not production-secure)
 
-## Scratch links
+---
 
-Each lesson currently includes:
+## 👨‍🏫 Teacher Dashboard
 
-- `scratchEditorUrl`
-- `scratchStarterUrl`
-- `scratchEmbedUrl`
-
-Replace the placeholder URLs in `lib/lessons.ts` with your own school Scratch projects or studio links.
-
-## Deploying the update
-
-1. Replace the files in your GitHub repo with this updated project.
-2. In Vercel, update the environment variables above.
-3. Redeploy.
-
-## Important limitation
-
-The teacher analytics dashboard is still browser-based in this version. It shows:
-
-- current-browser completion and quiz data
-- a demo class table to prove the dashboard layout
-
-To make analytics real across the school, the next stage would be connecting a database such as Supabase or Firebase.
+Access via:
