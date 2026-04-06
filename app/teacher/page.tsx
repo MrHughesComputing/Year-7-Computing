@@ -35,26 +35,26 @@ type TeacherPupilRow = LearnerProfile & {
 type SortMode = "name" | "progress" | "mastery";
 type ActivityFilter = "all" | "active" | "not-started";
 
-const CLASS_OPTIONS = ["Year 6 Elder", "Year 6 Juniper", "Year 6 Walnut"];
+const CLASS_OPTIONS = ["Year 7A", "Year 7B"];
 
 const LESSON_TITLES = [
-  "Variables in Games",
-  "Setting and Changing Variables",
-  "Using a Variable for Score",
-  "Using a Variable for Lives",
-  "Variables with Conditions",
-  "Designing a Variable-Based Game",
-  "Debugging Variables",
-  "Introduction to Micro:bit",
-  "Selection and Flow in MakeCode",
-  "Sensing Inputs",
-  "Variables and Logic in MakeCode",
-  "Designing a Step Counter",
+  "Sequencing and Precision",
+  "Variables and Program Flow",
+  "Selection with If Statements",
+  "Operators and Complex Conditions",
+  "Iteration and Count-Controlled Loops",
+  "Combining Constructs for Problem Solving",
+  "Assessment Project: Structured Scratch Build",
+  "Decomposition and Subroutines",
+  "Condition-Controlled Iteration",
+  "Evaluating Different Loop Types",
+  "Lists and Data Structures",
+  "Final Project: Translate Quiz",
 ];
 
-const REGISTRY_KEY = "year6-pupil-registry";
-const CURRENT_PROFILE_KEY = "year6-current-profile";
-const TEACHER_UNLOCKED_KEY = "year6-teacher-unlocked";
+const REGISTRY_KEY = "year7-pupil-registry";
+const CURRENT_PROFILE_KEY = "year7-current-profile";
+const TEACHER_UNLOCKED_KEY = "year7-teacher-unlocked";
 const TEACHER_PASSWORD = "APSR2026";
 const TOTAL_LESSONS = 12;
 const QUIZ_QUESTIONS_PER_LESSON = 10;
@@ -590,7 +590,7 @@ export default function TeacherDashboardPage() {
                 color: pastel.title,
               }}
             >
-              Year 6 Teacher Dashboard
+              Year 7 Teacher Dashboard
             </h1>
             <p style={{ fontSize: 20, margin: 0, maxWidth: 720 }}>
               Enter the teacher password to open the dashboard on this device.
@@ -751,11 +751,11 @@ export default function TeacherDashboardPage() {
                 color: pastel.title,
               }}
             >
-              Year 6 Teacher Dashboard
+              Year 7 Teacher Dashboard
             </h1>
 
             <p style={{ fontSize: 20, margin: 0, maxWidth: 860 }}>
-              View pupil progress for the Year 6 student app, including lesson
+              View pupil progress for the Year 7 student app, including lesson
               completion, quiz performance, mastery, screenshots, and quick access
               back into any pupil profile.
             </p>
