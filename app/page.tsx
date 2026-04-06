@@ -2373,7 +2373,7 @@ export default function Home() {
               APSR Year 7 Computing
             </h1>
             <p style={{ fontSize: 20, margin: 0, maxWidth: 860 }}>
-              Variables in Scratch and sensing with Micro:bit. Choose an existing
+              Variables and Loops in Scratch. Choose an existing
               pupil or create a new pupil learning space on this browser.
             </p>
           </div>
@@ -2680,7 +2680,7 @@ export default function Home() {
             </h1>
 
             <p style={{ fontSize: 22, margin: "0 0 12px" }}>
-              Variables in Scratch • Sensing with Micro:bit
+              Variables and Loops in Scratch
             </p>
 
             <div
