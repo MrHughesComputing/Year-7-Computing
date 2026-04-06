@@ -56,10 +56,10 @@ type LearnerProfile = {
 
 type StartMode = "existing" | "new";
 
-const CLASS_OPTIONS = ["Year 6 Elder", "Year 6 Juniper", "Year 6 Walnut"];
+const CLASS_OPTIONS = ["Year 7A", "Year 7B"];
 
-const REGISTRY_KEY = "year6-pupil-registry";
-const CURRENT_PROFILE_KEY = "year6-current-profile";
+const REGISTRY_KEY = "year7-pupil-registry";
+const CURRENT_PROFILE_KEY = "year7-current-profile";
 
 const pastel = {
   page: "#f8fafc",
@@ -88,1653 +88,1761 @@ const pastel = {
 };
 
 const lessons: Lesson[] = [
-  {
+{
     id: 1,
     week: 1,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Variables in Games",
-    shortTitle: "What is a Variable?",
-    description: "Introducing variables as values that can change during a game.",
-    objective: "I can explain that a variable stores information that can change.",
-    overview:
-      "A variable is like a labelled box in a program. It holds a value such as score, health, lives, or time, and that value can change while the project runs.",
-    whyItMatters:
-      "Games and interactive programs need to keep track of changing information. Variables make that possible.",
-    retrievalQuestion:
-      "Before this lesson: what kinds of information change while you are playing a game?",
+    title: "Sequencing and Precision",
+    shortTitle: "Exact Instructions",
+    description: "Exploring how computers follow instructions precisely and why sequencing must be exact.",
+    objective: "I can explain why computer instructions must be sequenced precisely.",
+    overview: "In programming, sequence means the exact order in which instructions run. Computers do not infer meaning like humans do, so a vague or misordered instruction causes the wrong output.",
+    whyItMatters: "Programming succeeds when instructions are clear, ordered, and unambiguous. Precision is the foundation of all later coding.",
+    retrievalQuestion: "Think back to earlier programming work: what happens when steps are missing or in the wrong order?",
     teachingPoints: [
-      "A variable stores data with a label.",
-      "The value inside a variable can increase, decrease, or be reset.",
-      "Common game variables include score, timer, lives, health, and level.",
-      "A variable is not just for maths; it is for tracking change.",
+      "Computers follow instructions literally.",
+      "Sequence means the exact order of commands.",
+      "A small change in order can change the whole outcome.",
+      "Programmers must remove ambiguity from instructions."
     ],
-    vocab: ["variable", "value", "store", "data", "score", "lives"],
+    vocab: [
+      "sequence",
+      "instruction",
+      "algorithm",
+      "precision",
+      "order",
+      "command"
+    ],
     guidedSteps: [
-      "Open Scratch and create a new project.",
-      "Delete the cat only if you want a different sprite.",
-      "Go to Variables and choose Make a Variable.",
-      "Create a variable called score.",
-      "Tick the checkbox so the score appears on the stage.",
-      "Add when green flag clicked.",
-      "Set score to 0 at the start.",
-      "Add change score by 1 and test how the value changes.",
+      "Open Scratch and start a new project.",
+      "Create a very short sequence that makes a sprite move, speak, and turn.",
+      "Run the code and observe the order of actions.",
+      "Swap two blocks and test again.",
+      "Notice how the outcome changes when the order changes.",
+      "Add another instruction and decide where it should go in the sequence.",
+      "Test carefully and refine the order until it behaves as intended.",
+      "Explain why your final sequence is the most accurate one."
     ],
-    practiceTask:
-      "Create a variable called score and make it start at 0 when the green flag is clicked.",
-    challengeTask:
-      "Add a second variable called lives and decide how both variables should be used in a simple game idea.",
-    keyQuestion: "Why is a variable useful in a game project?",
-    misconception:
-      "A variable is not a fixed piece of text. It stores a value that can change while the program runs.",
-    correctOutcome:
-      "The project shows a score variable that starts correctly and changes when the code runs.",
-    wrongOutcome:
-      "The variable is created, but it is not set or changed clearly, so the value does not help the program.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Build a short Scratch sequence that makes a sprite complete three clear actions in the correct order.",
+    challengeTask: "Create a sequence with at least five steps and then deliberately reorder one step to show how precision affects the result.",
+    keyQuestion: "Why is precision essential when writing instructions for a computer?",
+    misconception: "Computers do not guess what the programmer meant. They only follow the sequence they are given.",
+    correctOutcome: "The project runs in a clear, intended order and the pupil can explain why the sequence works.",
+    wrongOutcome: "The project runs, but the order is confused or the pupil cannot explain why each instruction is placed where it is.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 2,
     week: 2,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Setting and Changing Variables",
-    shortTitle: "Set vs Change",
-    description: "Understanding the difference between setting a value and changing a value.",
-    objective: "I can use set and change blocks correctly with a variable.",
-    overview:
-      "Setting a variable gives it an exact starting value. Changing a variable adds or subtracts from its current value.",
-    whyItMatters:
-      "If pupils confuse set and change, scores, timers, and counters will not behave properly.",
-    retrievalQuestion:
-      "What was the name of the variable you created last lesson, and what did it track?",
+    title: "Variables and Program Flow",
+    shortTitle: "Tracking Change",
+    description: "Using variables to store changing values and tracing how they change through a program.",
+    objective: "I can use and trace a variable as a program runs.",
+    overview: "A variable stores data that may change while a program runs. In Scratch, variables allow programmers to track values such as score, timer, attempts, or level.",
+    whyItMatters: "Variables make programs dynamic. Without them, a program cannot keep track of changing information.",
+    retrievalQuestion: "What is sequence, and why does order still matter when a variable is involved?",
     teachingPoints: [
-      "Set gives the variable a precise value such as 0.",
-      "Change adjusts the current value such as +1 or -1.",
-      "Set is useful at the start of a game.",
-      "Change is useful during the game while events happen.",
+      "A variable stores a value with a name.",
+      "The value can be set, changed, and checked.",
+      "Tracing means following the value step by step.",
+      "Program flow is easier to understand when variable values are tracked carefully."
     ],
-    vocab: ["set", "change", "counter", "start value", "increase", "decrease"],
+    vocab: [
+      "variable",
+      "value",
+      "trace",
+      "flow",
+      "store",
+      "update"
+    ],
     guidedSteps: [
-      "Open your Scratch project from last lesson or make a new one.",
-      "Create a variable called points.",
-      "Add when green flag clicked.",
-      "Use set points to 0.",
-      "Add another event such as when this sprite clicked.",
-      "Use change points by 1.",
-      "Test the project by clicking the sprite.",
-      "Now add another block that changes points by -1 and compare the effect.",
+      "Open Scratch and create a variable called counter.",
+      "Add code to set counter to 0 when the green flag is clicked.",
+      "Add actions that change counter by different amounts.",
+      "Run the program and watch the variable monitor.",
+      "Pause after each stage and record the value.",
+      "Explain why the value changed at each point.",
+      "Change one value in the code and predict the new outcome.",
+      "Run again and compare your prediction with the result."
     ],
-    practiceTask:
-      "Build a mini counter where clicking a sprite increases a variable by 1.",
-    challengeTask:
-      "Create a project with two buttons: one increases points and one decreases points.",
-    keyQuestion: "When should a programmer use set instead of change?",
-    misconception:
-      "Set and change do not do the same job. Set replaces the value; change adjusts the current value.",
-    correctOutcome:
-      "The variable starts at the correct value and then changes logically during the project.",
-    wrongOutcome:
-      "The variable keeps resetting when it should be increasing, or keeps increasing when it should restart.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Create a short program with one variable that changes at least three times, then trace the value after each change.",
+    challengeTask: "Use two variables in the same sequence and explain how both values change as the program runs.",
+    keyQuestion: "How does tracing a variable help a programmer understand program flow?",
+    misconception: "A variable is not just a label on the screen. It stores a value that can change during execution.",
+    correctOutcome: "The pupil can trace the variable accurately and explain how the code changed its value.",
+    wrongOutcome: "The value changes on screen, but the pupil cannot explain when or why those changes happened.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 3,
     week: 3,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Using a Variable for Score",
-    shortTitle: "Score System",
-    description: "Applying variables in a simple scoring game.",
-    objective: "I can use a variable to track score in a game.",
-    overview:
-      "A score system rewards actions. Scratch can add to a score whenever a player completes a successful action.",
-    whyItMatters:
-      "This is one of the clearest real uses of variables in game design.",
-    retrievalQuestion:
-      "What is the difference between setting a variable and changing a variable?",
+    title: "Selection with If Statements",
+    shortTitle: "True or False",
+    description: "Controlling program flow using conditions and if statements.",
+    objective: "I can use an if statement to make a program respond to a condition.",
+    overview: "Selection allows a program to choose between different paths. An if statement checks whether a condition is true, and only then runs the code inside it.",
+    whyItMatters: "Selection makes programs interactive and responsive rather than fixed and predictable.",
+    retrievalQuestion: "How does a variable help a program keep track of information before a decision is made?",
     teachingPoints: [
-      "The score must be reset at the start.",
-      "The score should increase only when the correct event happens.",
-      "The event might be touching an object, clicking a sprite, or collecting an item.",
-      "The code should avoid accidental double-counting where possible.",
+      "Selection changes the path a program follows.",
+      "Conditions evaluate as true or false.",
+      "If statements run code only when the condition is true.",
+      "Selection is often linked to variables, input, or scoring systems."
     ],
-    vocab: ["score", "event", "collect", "reward", "collision", "reset"],
+    vocab: [
+      "selection",
+      "condition",
+      "if statement",
+      "true",
+      "false",
+      "branch"
+    ],
     guidedSteps: [
-      "Create a variable called score if you do not already have one.",
-      "Set score to 0 when the green flag is clicked.",
-      "Choose a sprite to collect.",
-      "Add code that checks for a successful event, such as touching another sprite.",
-      "When the event happens, change score by 1.",
-      "Move or hide the collected item so the score does not increase endlessly from one touch.",
-      "Test the game several times.",
-      "Watch how the score changes as events happen.",
+      "Open Scratch and add a simple variable or input trigger.",
+      "Create an if statement using a clear condition.",
+      "Place an action inside the if block such as saying a message.",
+      "Run the program with the condition false and observe what happens.",
+      "Now make the condition true and test again.",
+      "Compare the two outcomes carefully.",
+      "Edit the condition so it uses a different value or event.",
+      "Retest and explain how selection controlled the program flow."
     ],
-    practiceTask:
-      "Make a simple game where score increases when the player collects or clicks something correctly.",
-    challengeTask:
-      "Add a target score and a winning message when the score reaches it.",
-    keyQuestion: "How does a score variable make a game feel more interactive?",
-    misconception:
-      "A score should not increase all the time. It should only change when the intended event happens.",
-    correctOutcome:
-      "The score starts at 0 and increases only when the correct game action takes place.",
-    wrongOutcome:
-      "The score increases too often, never resets, or does not match the player’s actions.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Build a Scratch script that uses an if statement to display a different response when a chosen condition is met.",
+    challengeTask: "Create a short program with two separate if statements controlling different outcomes.",
+    keyQuestion: "How does an if statement change the behaviour of a program?",
+    misconception: "An if statement does not always run. It only runs when its condition is true.",
+    correctOutcome: "The pupil creates a working if statement and explains why the action only happens in the correct circumstances.",
+    wrongOutcome: "The action appears random because the condition is unclear or does not control the code properly.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 4,
     week: 4,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Using a Variable for Lives",
-    shortTitle: "Lives and Health",
-    description: "Tracking mistakes or damage using a variable.",
-    objective: "I can use a variable to reduce lives when something goes wrong.",
-    overview:
-      "A lives variable makes a game more meaningful because it can measure mistakes, damage, or missed chances.",
-    whyItMatters:
-      "Variables are not only for rewards. They can also track risk, challenge, and game over states.",
-    retrievalQuestion:
-      "In your own words, how is a lives variable different from a score variable?",
+    title: "Operators and Complex Conditions",
+    shortTitle: "Compare and Combine",
+    description: "Using comparison and logical operators to build more precise decisions.",
+    objective: "I can use comparison and logical operators to create complex conditions.",
+    overview: "Operators allow programs to compare values and combine conditions. Comparison operators test values such as greater than, less than, or equal to. Logical operators such as AND, OR, and NOT make decisions more complex.",
+    whyItMatters: "More advanced programs need more precise logic. Operators help programmers create sophisticated rules.",
+    retrievalQuestion: "What does an if statement need in order to decide whether code should run?",
     teachingPoints: [
-      "Lives usually begin at a set number such as 3.",
-      "Lives should decrease only when the player makes a mistake or meets danger.",
-      "If lives reach 0, the game may stop or show a message.",
-      "Variables help control game flow, not just display numbers.",
+      "Comparison operators test relationships between values.",
+      "Logical operators combine or reverse conditions.",
+      "AND requires both conditions to be true.",
+      "OR requires at least one condition to be true."
     ],
-    vocab: ["lives", "health", "penalty", "game over", "decrease", "condition"],
+    vocab: [
+      "operator",
+      "comparison",
+      "logical operator",
+      "AND",
+      "OR",
+      "NOT"
+    ],
     guidedSteps: [
-      "Create a variable called lives.",
-      "Set lives to 3 when the green flag is clicked.",
-      "Choose an event that counts as a mistake, such as touching an enemy.",
-      "When that event happens, change lives by -1.",
-      "Add a check to see whether lives = 0.",
-      "If lives = 0, make the sprite say Game Over or stop the project.",
-      "Test what happens after one, two, and three mistakes.",
-      "Check that lives never start with the wrong value.",
+      "Open Scratch and build a simple if statement.",
+      "Add a comparison such as score > 5.",
+      "Test what happens when the comparison is false and when it is true.",
+      "Now combine two conditions with an AND block.",
+      "Run the code and decide when both conditions are satisfied.",
+      "Replace AND with OR and compare the difference.",
+      "Try a NOT block to reverse a condition.",
+      "Explain which operator is most suitable for your final logic."
     ],
-    practiceTask:
-      "Add a lives system to a simple game and reduce lives when the player touches danger.",
-    challengeTask:
-      "Use both score and lives in the same project and decide which one matters most to winning.",
-    keyQuestion: "Why does a lives variable change the way a player behaves in a game?",
-    misconception:
-      "Lives should not decrease randomly. They must be linked to a clear event or rule in the code.",
-    correctOutcome:
-      "Lives start correctly, decrease when danger is touched, and trigger a game over when they reach 0.",
-    wrongOutcome:
-      "Lives fall too fast, never decrease, or the game over state does not connect to the variable.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Create a Scratch condition using a comparison operator and test it with different values.",
+    challengeTask: "Build a complex condition using AND or OR and justify why that operator is the right choice.",
+    keyQuestion: "Why do programmers need operators to make decisions more precise?",
+    misconception: "AND and OR do not mean the same thing. They produce different results and must be chosen carefully.",
+    correctOutcome: "The pupil creates and tests a complex condition accurately and can justify the logic used.",
+    wrongOutcome: "The pupil combines conditions, but the logic does not match the intended rule or cannot be explained.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 5,
     week: 5,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Variables with Conditions",
-    shortTitle: "If + Variables",
-    description: "Using variables inside decision-making code.",
-    objective: "I can use a variable in an if statement to control what happens next.",
-    overview:
-      "A variable becomes more powerful when the program uses its value to make decisions. For example, if score = 10, the player wins.",
-    whyItMatters:
-      "This is where tracking data connects to computational thinking and logic.",
-    retrievalQuestion:
-      "What does a condition do, and how could it work with a score or lives variable?",
+    title: "Iteration and Count-Controlled Loops",
+    shortTitle: "Repeat Efficiently",
+    description: "Using loops to repeat instructions efficiently and avoid unnecessary repetition.",
+    objective: "I can use count-controlled iteration to make a program more efficient.",
+    overview: "Iteration repeats instructions. A count-controlled loop repeats a known number of times, making code shorter, clearer, and easier to maintain.",
+    whyItMatters: "Loops reduce repetition and help programmers write efficient, readable code.",
+    retrievalQuestion: "How might a loop improve a sequence that currently repeats similar instructions many times?",
     teachingPoints: [
-      "Conditions ask true/false questions.",
-      "Variables can be compared using =, >, and <.",
-      "This allows the project to respond differently depending on the value.",
-      "Game win and lose states often depend on variable conditions.",
+      "Iteration means repetition in code.",
+      "A count-controlled loop repeats a fixed number of times.",
+      "Loops make code more efficient and easier to edit.",
+      "The same outcome can often be achieved with fewer blocks using iteration."
     ],
-    vocab: ["condition", "compare", "greater than", "equal to", "logic", "state"],
+    vocab: [
+      "iteration",
+      "loop",
+      "repeat",
+      "count-controlled",
+      "efficient",
+      "pattern"
+    ],
     guidedSteps: [
-      "Open a project with a variable such as score or lives.",
-      "Add a condition such as if score = 5 then.",
-      "Place an action inside the if block, such as say You win.",
-      "Try a second version using if lives < 1 then.",
-      "Change the variable during the game so the condition can become true.",
-      "Test whether the message appears at the correct time.",
-      "Adjust the compared value if needed.",
-      "Retest carefully.",
+      "Open Scratch and create a repeated movement pattern manually.",
+      "Count how many times the pattern repeats.",
+      "Replace the repeated blocks with a repeat block.",
+      "Put the repeated actions inside the loop.",
+      "Run the project and compare the result with the original version.",
+      "Change the repeat number and observe the effect.",
+      "Decide which version is easier to maintain and why.",
+      "Explain how iteration improved the code."
     ],
-    practiceTask:
-      "Use a variable inside an if statement to trigger a win or lose message.",
-    challengeTask:
-      "Create two different conditions in the same project, one for winning and one for losing.",
-    keyQuestion: "Why does comparing a variable help a program make decisions?",
-    misconception:
-      "A variable on its own does not create a decision. The program must compare its value in a condition.",
-    correctOutcome:
-      "The project reacts only when the variable reaches the intended value.",
-    wrongOutcome:
-      "The project reacts too early, too late, or not at all because the condition is incorrect.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Use a repeat block to recreate a pattern that would otherwise need several repeated instructions.",
+    challengeTask: "Build a loop-based animation or movement pattern and explain why iteration is more efficient than copying blocks.",
+    keyQuestion: "How does iteration improve the efficiency of a program?",
+    misconception: "Using a loop does not make code more random. It makes repeated behaviour more controlled and efficient.",
+    correctOutcome: "The pupil uses a repeat loop correctly and explains why it is better than copying the same instructions multiple times.",
+    wrongOutcome: "The project repeats actions, but the loop is used incorrectly or the efficiency gain cannot be explained.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 6,
     week: 6,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Designing a Variable-Based Game",
-    shortTitle: "Plan Before Code",
-    description: "Planning how variables, events, and conditions will work together.",
-    objective: "I can plan a game that uses variables clearly before building it.",
-    overview:
-      "Good programs are planned. Pupils should decide what to track, how values change, and what conditions matter before building everything.",
-    whyItMatters:
-      "Planning prevents messy code and helps pupils think like programmers rather than random block collectors.",
-    retrievalQuestion:
-      "What is one good reason to use both variables and conditions in a project?",
+    title: "Combining Constructs for Problem Solving",
+    shortTitle: "Build with Logic",
+    description: "Combining sequence, variables, selection, and iteration to solve structured programming problems.",
+    objective: "I can combine multiple programming constructs to solve a problem.",
+    overview: "Real programs rarely rely on one construct alone. Strong programmers combine sequence, variables, selection, and iteration to create effective solutions.",
+    whyItMatters: "Programming is problem solving. The skill lies in choosing and combining the right constructs for the task.",
+    retrievalQuestion: "Which construct would be most useful for repetition, and which would be most useful for decision-making?",
     teachingPoints: [
-      "A game plan should include goal, rules, variables, and win/lose conditions.",
-      "Different variables do different jobs.",
-      "The order of events matters.",
-      "A clear algorithm makes the build easier.",
+      "Different problems need different combinations of constructs.",
+      "Variables track data, selection controls decisions, and iteration handles repetition.",
+      "Debugging is easier when the logic of the solution is planned first.",
+      "A program can often be improved by simplifying its structure."
     ],
-    vocab: ["algorithm", "plan", "flow", "rule", "goal", "sequence"],
+    vocab: [
+      "construct",
+      "problem solving",
+      "logic",
+      "debug",
+      "solution",
+      "structure"
+    ],
     guidedSteps: [
-      "Choose a simple game idea.",
-      "Write down the player goal.",
-      "Decide which variable or variables the game needs.",
-      "Decide when each variable changes.",
-      "Write a win condition and a lose condition.",
-      "Sketch the order of events from start to finish.",
-      "Match your plan to Scratch blocks you expect to use.",
-      "Only after planning, begin building.",
+      "Read a short programming problem or challenge.",
+      "Identify which parts need sequence, variables, selection, or iteration.",
+      "Plan the order of your solution before building.",
+      "Create the program in Scratch one section at a time.",
+      "Test each section after building it.",
+      "Check whether the parts work together logically.",
+      "Refine any part that is unclear or repetitive.",
+      "Explain why you chose each construct in your solution."
     ],
-    practiceTask:
-      "Create a clear plan for a game that uses at least one variable and one condition.",
-    challengeTask:
-      "Plan a game that uses two variables and explain how both affect the outcome.",
-    keyQuestion: "Why is planning especially important once a project has more than one variable?",
-    misconception:
-      "Planning is not extra work to avoid. It is part of programming well.",
-    correctOutcome:
-      "The pupil can explain what each variable does and how the project should behave before coding.",
-    wrongOutcome:
-      "The project idea exists, but the rules, values, and conditions are unclear or contradictory.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Create a Scratch solution to a structured problem using at least three different programming constructs.",
+    challengeTask: "Improve your program by simplifying the code, removing repetition, or making the logic more efficient.",
+    keyQuestion: "How do programmers decide which constructs to combine when solving a problem?",
+    misconception: "Programming is not just adding blocks until something works. A strong solution is planned, purposeful, and logical.",
+    correctOutcome: "The pupil combines constructs coherently and can justify why each one was used.",
+    wrongOutcome: "The project contains several constructs, but they do not work together logically or solve the intended problem.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 7,
     week: 7,
     term: "Summer Term 1",
     platform: "Scratch",
-    title: "Debugging Variables",
-    shortTitle: "Fix the Logic",
-    description: "Testing and fixing projects that use score, lives, and conditions.",
-    objective: "I can spot and fix mistakes in code that uses variables.",
-    overview:
-      "Variable bugs often look like wrong scores, endless counting, or a game over appearing too early. Debugging means testing methodically and fixing the real cause.",
-    whyItMatters:
-      "Programming is not just writing code. It is also checking whether the code behaves as intended.",
-    retrievalQuestion:
-      "What is one common mistake that could make a score variable behave incorrectly?",
+    title: "Assessment Project: Structured Scratch Build",
+    shortTitle: "Independent Project",
+    description: "Applying sequence, variables, selection, and iteration independently in a structured Scratch project.",
+    objective: "I can independently design and build a Scratch project using the key constructs from this term.",
+    overview: "This assessment project asks pupils to bring together the core ideas from the term in one coherent program. The focus is on quality of logic, independence, and control.",
+    whyItMatters: "Assessment shows whether pupils can transfer learning into an independent programming task.",
+    retrievalQuestion: "Which four constructs have been central to your programming work this term?",
     teachingPoints: [
-      "Start by identifying exactly what is wrong.",
-      "Test one part at a time.",
-      "Check start values, change values, and conditions.",
-      "Do not change everything at once.",
+      "A strong project has a clear purpose and structure.",
+      "Core constructs should be used deliberately, not just included at random.",
+      "Testing and refinement are part of independent programming.",
+      "Evaluation matters as much as construction."
     ],
-    vocab: ["debug", "test", "logic error", "trace", "fix", "behaviour"],
+    vocab: [
+      "independent",
+      "assessment",
+      "design",
+      "refine",
+      "evaluate",
+      "purpose"
+    ],
     guidedSteps: [
-      "Run the project and observe carefully.",
-      "Check whether the variable starts with the correct value.",
-      "Trigger the event that should change the variable.",
-      "Notice whether the value changes by the correct amount.",
-      "Check any if statements that compare the variable.",
-      "Change one piece of code only.",
-      "Retest after the change.",
-      "Repeat until the project behaves as planned.",
+      "Choose or receive the project brief.",
+      "Plan the purpose and main features of your project.",
+      "Decide where sequence, variables, selection, and iteration will be used.",
+      "Build the project step by step in Scratch.",
+      "Test after each major section.",
+      "Debug any issues methodically.",
+      "Review whether the project meets the brief.",
+      "Make final refinements and prepare to explain your code."
     ],
-    practiceTask:
-      "Test a variable-based game and fix at least one bug affecting score, lives, or win/lose logic.",
-    challengeTask:
-      "Intentionally create a bug, swap projects with a partner, and explain how to debug it logically.",
-    keyQuestion: "Why should a programmer change only one thing at a time while debugging?",
-    misconception:
-      "Debugging is not guessing. It is careful testing, identifying the cause, and making a controlled fix.",
-    correctOutcome:
-      "The variable system behaves reliably because the pupil tested and fixed the real problem.",
-    wrongOutcome:
-      "The code changes repeatedly without a clear reason, so the bug stays hidden or new bugs appear.",
-    projectLink: "https://scratch.mit.edu/",
+    practiceTask: "Build an assessment project that includes sequence, a variable, selection, and iteration.",
+    challengeTask: "Add an extra feature that improves the user experience while keeping the logic clear and efficient.",
+    keyQuestion: "What makes an independent project logically strong rather than just visually impressive?",
+    misconception: "A good programming project is not judged only by how it looks. The quality of the logic matters most.",
+    correctOutcome: "The completed project works logically, includes the key constructs, and can be explained clearly by the pupil.",
+    wrongOutcome: "The project looks busy or decorative but lacks secure logic or control of the required constructs.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 8,
     week: 1,
     term: "Summer Term 2",
-    platform: "MakeCode",
-    title: "Introduction to Micro:bit",
-    shortTitle: "Input → Process → Output",
-    description: "Beginning MakeCode and understanding how a physical device responds to code.",
-    objective: "I can explain input, process, and output on a micro:bit.",
-    overview:
-      "The micro:bit is a physical computing device. It can receive input, process instructions, and produce output such as lights or text.",
-    whyItMatters:
-      "This moves programming beyond the screen and helps pupils understand real-world devices.",
-    retrievalQuestion:
-      "Can you name one device in everyday life that uses input, processing, and output?",
+    platform: "Scratch",
+    title: "Decomposition and Subroutines",
+    shortTitle: "Custom Blocks",
+    description: "Breaking larger problems into manageable parts and using custom blocks to structure code.",
+    objective: "I can decompose a problem and use custom blocks to organise a solution.",
+    overview: "Decomposition means breaking a large problem into smaller parts. In Scratch, custom blocks act like subroutines, allowing repeated or related code to be grouped into a named block.",
+    whyItMatters: "As programs become larger, structure matters. Decomposition and subroutines make code clearer, reusable, and easier to manage.",
+    retrievalQuestion: "Why can large programs become difficult to manage if everything is kept in one long script?",
     teachingPoints: [
-      "Input is what the device detects or receives.",
-      "Processing is the code making a decision.",
-      "Output is what the device does in response.",
-      "The emulator helps pupils test code before using a real device.",
+      "Decomposition breaks a problem into smaller manageable parts.",
+      "Subroutines group instructions into reusable chunks.",
+      "Custom blocks improve clarity and organisation.",
+      "Structured programs are easier to debug and improve."
     ],
-    vocab: ["input", "process", "output", "device", "emulator", "LED"],
+    vocab: [
+      "decomposition",
+      "subroutine",
+      "custom block",
+      "reuse",
+      "structure",
+      "modular"
+    ],
     guidedSteps: [
-      "Open Microsoft MakeCode for micro:bit.",
-      "Start a new project.",
-      "Find the on start block.",
-      "Add a basic show leds block.",
-      "Create a simple LED pattern such as a heart or smile.",
-      "Run the code in the emulator.",
-      "Change the pattern and test again.",
-      "Discuss what the input, process, and output are in this example.",
+      "Open Scratch and consider a larger project idea.",
+      "List the separate jobs the program needs to do.",
+      "Choose one repeated or self-contained task.",
+      "Create a custom block for that task.",
+      "Move the relevant instructions into the custom block definition.",
+      "Call the custom block from the main program.",
+      "Test that the project still behaves correctly.",
+      "Explain how decomposition improved the structure of your code."
     ],
-    practiceTask:
-      "Create a MakeCode project that shows a clear LED pattern when the program starts.",
-    challengeTask:
-      "Make the micro:bit show two different LED patterns in sequence and explain the output clearly.",
-    keyQuestion: "How is programming a micro:bit different from programming only on the screen?",
-    misconception:
-      "The micro:bit is not magic hardware. It still follows precise instructions written by the programmer.",
-    correctOutcome:
-      "The project runs in the emulator and the pupil can explain the output produced by the code.",
-    wrongOutcome:
-      "The pupil places blocks randomly without understanding what the device is supposed to do.",
-    projectLink: "https://makecode.microbit.org/",
+    practiceTask: "Create a Scratch project that uses at least one custom block to organise part of the program.",
+    challengeTask: "Use more than one custom block and explain how each one helps break the problem into smaller parts.",
+    keyQuestion: "How do decomposition and subroutines help programmers manage larger programs?",
+    misconception: "Custom blocks are not just shortcuts. They improve organisation, readability, and reuse.",
+    correctOutcome: "The pupil creates and uses a custom block meaningfully and explains how it supports decomposition.",
+    wrongOutcome: "A custom block is created, but it does not organise the program clearly or its purpose cannot be explained.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 9,
     week: 2,
     term: "Summer Term 2",
-    platform: "MakeCode",
-    title: "Selection and Flow in MakeCode",
-    shortTitle: "If... Then... Else",
-    description: "Using conditions to control what a micro:bit does.",
-    objective: "I can use if... then... else to control program flow in MakeCode.",
-    overview:
-      "A micro:bit can make decisions using conditional logic. For example, if button A is pressed then show one pattern, else show another.",
-    whyItMatters:
-      "Selection is essential for building responsive devices rather than one fixed display.",
-    retrievalQuestion:
-      "What does a condition do in code, and where have you used one before?",
+    platform: "Scratch",
+    title: "Condition-Controlled Iteration",
+    shortTitle: "Repeat Until",
+    description: "Using loops that continue until a condition is met.",
+    objective: "I can use condition-controlled iteration in a Scratch program.",
+    overview: "Condition-controlled iteration repeats instructions until a condition changes. In Scratch, this is often seen in repeat until loops or forever loops combined with conditions.",
+    whyItMatters: "Not all repetition should run a fixed number of times. Sometimes a loop must continue until a target is reached or an event occurs.",
+    retrievalQuestion: "How is a count-controlled loop different from a loop that depends on a condition?",
     teachingPoints: [
-      "Selection controls flow.",
-      "The program checks whether a condition is true or false.",
-      "The then path runs when true.",
-      "The else path runs when false.",
+      "Condition-controlled loops depend on logic rather than a fixed count.",
+      "The loop stops when a condition becomes true.",
+      "These loops are useful in games, chasing actions, or repeated checks.",
+      "Programmers must design the condition carefully to avoid infinite loops."
     ],
-    vocab: ["selection", "condition", "flow", "true", "false", "branch"],
+    vocab: [
+      "condition-controlled",
+      "repeat until",
+      "forever",
+      "target",
+      "infinite loop",
+      "terminate"
+    ],
     guidedSteps: [
-      "Open a new MakeCode project.",
-      "Find an input block such as button A pressed.",
-      "Add an if then else block.",
-      "Use a condition related to a button or input.",
-      "Place one output in the then branch.",
-      "Place a different output in the else branch.",
-      "Test the project in the emulator.",
-      "Change the condition or output and compare the results.",
+      "Open Scratch and create a variable or condition to monitor.",
+      "Add a repeat until block.",
+      "Choose a sensible stopping condition such as score = 10.",
+      "Place repeated actions inside the loop.",
+      "Run the project and watch whether the condition changes.",
+      "Check that the loop stops at the correct point.",
+      "Adjust the logic if the loop never ends or stops too soon.",
+      "Explain why this problem needed condition-controlled iteration."
     ],
-    practiceTask:
-      "Build a project where the micro:bit shows one output for one condition and a different output otherwise.",
-    challengeTask:
-      "Add a second decision so the micro:bit can respond in more than one way to user input.",
-    keyQuestion: "Why is an else path useful when controlling a device?",
-    misconception:
-      "Else is not extra decoration. It handles what should happen when the condition is false.",
-    correctOutcome:
-      "The device responds differently depending on whether the condition is met.",
-    wrongOutcome:
-      "The same output appears every time because the program is not branching correctly.",
-    projectLink: "https://makecode.microbit.org/",
+    practiceTask: "Build a Scratch program that uses a repeat until loop to continue until a target condition is reached.",
+    challengeTask: "Compare a count-controlled loop and a condition-controlled loop, then justify which is better for your task.",
+    keyQuestion: "When is a condition-controlled loop more suitable than a count-controlled loop?",
+    misconception: "A loop does not stop automatically unless the programmer creates logic that allows the stopping condition to be reached.",
+    correctOutcome: "The pupil creates a working condition-controlled loop and explains why it fits the problem.",
+    wrongOutcome: "The loop runs endlessly, stops incorrectly, or the pupil cannot explain the purpose of the condition.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 10,
     week: 3,
     term: "Summer Term 2",
-    platform: "MakeCode",
-    title: "Sensing Inputs",
-    shortTitle: "Buttons and Motion",
-    description: "Using button presses and movement as inputs for a program.",
-    objective: "I can use inputs such as buttons and motion to control a micro:bit.",
-    overview:
-      "The micro:bit includes built-in inputs such as buttons and an accelerometer. These allow the device to react to human actions and movement.",
-    whyItMatters:
-      "Sensing makes physical computing interactive and responsive.",
-    retrievalQuestion:
-      "What is the difference between input and output in a physical device?",
+    platform: "Scratch",
+    title: "Evaluating Different Loop Types",
+    shortTitle: "Choose the Best Loop",
+    description: "Comparing iteration types and justifying which is best for a given problem.",
+    objective: "I can evaluate different loop types and justify my choice.",
+    overview: "Programmers do not choose loops at random. They evaluate the task and select the loop that best matches the logic of the problem.",
+    whyItMatters: "Evaluation is a key KS3 skill. Pupils need to explain not only what works, but why it is the most suitable solution.",
+    retrievalQuestion: "What is the difference between count-controlled and condition-controlled iteration?",
     teachingPoints: [
-      "Buttons are simple digital inputs.",
-      "Motion can be detected through the accelerometer.",
-      "The program responds only when a chosen trigger happens.",
-      "Different inputs can produce different outputs.",
+      "Different loops solve different kinds of repetition problems.",
+      "Evaluation involves comparison and justification.",
+      "A suitable solution is efficient, logical, and easy to understand.",
+      "Programmers should be able to explain their design decisions."
     ],
-    vocab: ["sensor", "trigger", "input", "button", "accelerometer", "motion"],
+    vocab: [
+      "evaluate",
+      "justify",
+      "suitable",
+      "count-controlled",
+      "condition-controlled",
+      "efficiency"
+    ],
     guidedSteps: [
-      "Start a new MakeCode project.",
-      "Use on button A pressed and add an LED output.",
-      "Test the button response in the emulator.",
-      "Now add an input gesture such as shake.",
-      "Give the shake gesture a different output.",
-      "Test both inputs separately.",
-      "Check that each input causes the correct output.",
-      "Explain how the device knows which event happened.",
+      "Look at two similar Scratch solutions using different loop types.",
+      "Run both versions and compare the outcomes.",
+      "Identify what each loop is doing well.",
+      "Decide which version is more suitable for the task.",
+      "Record your reasoning using precise vocabulary.",
+      "Modify one version to improve it.",
+      "Retest and compare again.",
+      "Write a short evaluation explaining your final choice."
     ],
-    practiceTask:
-      "Create a micro:bit project that responds to both a button press and a movement gesture.",
-    challengeTask:
-      "Combine two different inputs in one project and make the outputs clearly different.",
-    keyQuestion: "Why are sensors important in physical computing?",
-    misconception:
-      "The micro:bit does not guess. It only reacts when the programmed input condition is triggered.",
-    correctOutcome:
-      "The device responds correctly to more than one type of input.",
-    wrongOutcome:
-      "The device always shows the same output because the inputs are not linked properly.",
-    projectLink: "https://makecode.microbit.org/",
+    practiceTask: "Compare two loop-based solutions and explain which one is more suitable for the problem.",
+    challengeTask: "Design your own example where two different loops could work, then justify which is better and why.",
+    keyQuestion: "What makes one loop more suitable than another for a particular task?",
+    misconception: "If two solutions both run, that does not mean they are equally strong. One may still be more suitable or efficient.",
+    correctOutcome: "The pupil compares loop types thoughtfully and justifies the best choice using accurate reasoning.",
+    wrongOutcome: "The pupil chooses a loop without meaningful explanation or cannot compare the strengths of each approach.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 11,
     week: 4,
     term: "Summer Term 2",
-    platform: "MakeCode",
-    title: "Variables and Logic in MakeCode",
-    shortTitle: "Count and Compare",
-    description: "Using variables with movement and conditions on a micro:bit.",
-    objective: "I can create a variable in MakeCode and use it in a condition.",
-    overview:
-      "Variables in MakeCode can track changing values in a physical device, such as the number of shakes or steps. Conditions can then compare that value to decide what happens next.",
-    whyItMatters:
-      "This joins the Year 6 ideas together: changing values, logic, and real-world input.",
-    retrievalQuestion:
-      "How could a micro:bit use a variable in the same way that a Scratch game uses score?",
+    platform: "Scratch",
+    title: "Lists and Data Structures",
+    shortTitle: "Store Multiple Values",
+    description: "Using lists in Scratch to store and manage multiple pieces of related data.",
+    objective: "I can use a list to store and manipulate multiple values in a program.",
+    overview: "A list is a data structure that stores multiple items in one place. In Scratch, lists are useful when a program needs to store more than one value, such as answers, names, or collected items.",
+    whyItMatters: "Lists help programmers manage larger sets of data efficiently instead of creating many separate variables.",
+    retrievalQuestion: "Why might a single variable be a poor choice when a program needs to store many related values?",
     teachingPoints: [
-      "Variables can count physical events such as button presses or movements.",
-      "A condition can compare the variable to a target value.",
-      "The output can change when the target is reached.",
-      "This is the foundation of a step counter.",
+      "A list stores multiple values in one structure.",
+      "Lists are useful for collections of related data.",
+      "Programmers can add, remove, and read items from a list.",
+      "Lists support more advanced problem solving than single variables alone."
     ],
-    vocab: ["variable", "value", "compare", "count", "target", "logic"],
+    vocab: [
+      "list",
+      "data structure",
+      "item",
+      "store",
+      "remove",
+      "collection"
+    ],
     guidedSteps: [
-      "Open a new MakeCode project.",
-      "Create a variable called steps or count.",
-      "Set the variable to 0 when the program starts.",
-      "Use an input such as shake to change the variable by 1.",
-      "Add a condition such as if steps > 9 then.",
-      "Place an output inside the condition, such as show number or show icon.",
-      "Test the project in the emulator.",
-      "Watch how the variable changes and when the output happens.",
+      "Open Scratch and create a new list.",
+      "Give the list a clear name related to your project.",
+      "Add several items to the list manually or through code.",
+      "Display the list on screen and observe its contents.",
+      "Use blocks to add or delete an item.",
+      "Test how the list changes during the program.",
+      "Link the list to a small interaction such as choosing or checking an answer.",
+      "Explain why a list is more suitable than many separate variables in this case."
     ],
-    practiceTask:
-      "Build a project that counts an input and responds when the value reaches a chosen target.",
-    challengeTask:
-      "Use two conditions with the same variable, such as one output at 5 and another at 10.",
-    keyQuestion: "Why is a variable especially useful in a physical device that senses movement?",
-    misconception:
-      "The sensor detects the event, but the variable tracks how many times it has happened.",
-    correctOutcome:
-      "The micro:bit counts physical input and changes its behaviour based on the variable value.",
-    wrongOutcome:
-      "The project senses the input, but it does not store or compare the count correctly.",
-    projectLink: "https://makecode.microbit.org/",
+    practiceTask: "Create a Scratch list and use code to add, view, or remove items from it.",
+    challengeTask: "Build a small program that uses a list meaningfully, such as storing quiz answers, names, or collected objects.",
+    keyQuestion: "Why is a list often more useful than several separate variables?",
+    misconception: "A list is not just a display box. It is a structure for storing and manipulating multiple related values.",
+    correctOutcome: "The pupil uses a list correctly and can explain why it is the right structure for the task.",
+    wrongOutcome: "A list is present, but it is not used meaningfully or its purpose is unclear.",
+    projectLink: "https://scratch.mit.edu/"
   },
-  {
+{
     id: 12,
     week: 5,
     term: "Summer Term 2",
-    platform: "MakeCode",
-    title: "Designing a Step Counter",
-    shortTitle: "Final Design",
-    description: "Planning a simple micro:bit step counter using input, variables, and output.",
-    objective: "I can design a step counter algorithm using variables and sensing.",
-    overview:
-      "A step counter needs an input, a variable to track count, and an output to tell the user the result. The program must be planned carefully so each part works together.",
-    whyItMatters:
-      "This is the final Year 6 application of variables and sensing in a purposeful real-world project.",
-    retrievalQuestion:
-      "Which three parts must every step counter have: input, variable, and what else?",
+    platform: "Scratch",
+    title: "Final Project: Translate Quiz",
+    shortTitle: "Large-Scale Build",
+    description: "Decomposing and building a larger Scratch project using subroutines, lists, selection, and iteration.",
+    objective: "I can design and build a larger Scratch project using advanced structures from this term.",
+    overview: "The final project challenges pupils to design a larger interactive program such as a translate quiz. Success depends on decomposition, structured code, and secure use of lists, selection, iteration, and custom blocks.",
+    whyItMatters: "This project demonstrates whether pupils can solve a larger problem independently using KS3-level computational thinking.",
+    retrievalQuestion: "Which advanced ideas from this term would help you structure a larger project most effectively?",
     teachingPoints: [
-      "The design should identify the input clearly.",
-      "The variable tracks the count.",
-      "The output tells the user the result or progress.",
-      "Good design makes implementation easier and debugging faster.",
+      "Large projects need decomposition and planning.",
+      "Lists and subroutines support scale and organisation.",
+      "Selection and iteration control interaction and flow.",
+      "Testing and evaluation are essential for a strong final outcome."
     ],
-    vocab: ["algorithm", "design", "step counter", "input", "output", "system"],
+    vocab: [
+      "final project",
+      "translate quiz",
+      "decompose",
+      "subroutine",
+      "list",
+      "evaluate"
+    ],
     guidedSteps: [
-      "Decide which input will count as a step, such as shake or movement.",
-      "Create a variable name such as steps.",
-      "Decide how the steps variable changes.",
-      "Choose how the device will show progress or final output.",
-      "Write a simple if condition that uses the variable.",
-      "Plan what happens at the start of the program.",
-      "Plan what happens each time movement is detected.",
-      "Review whether the input, variable, and output all connect logically.",
+      "Read the final project brief and define the user goal.",
+      "Break the project into smaller parts such as questions, scoring, and feedback.",
+      "Decide where lists will store data.",
+      "Decide where custom blocks will organise repeated logic.",
+      "Build the program section by section in Scratch.",
+      "Test each section thoroughly before moving on.",
+      "Refine the interaction and debug any issues.",
+      "Evaluate how effectively your final design solves the problem."
     ],
-    practiceTask:
-      "Plan a clear step counter algorithm showing input, variable changes, and output.",
-    challengeTask:
-      "Extend the design so the counter resets, celebrates a target number, or responds differently at different milestones.",
-    keyQuestion: "Why is planning important before building a device such as a step counter?",
-    misconception:
-      "A working device still needs a clear design. Planning is part of strong programming, not separate from it.",
-    correctOutcome:
-      "The pupil can explain how the step counter should work from start to finish before building it.",
-    wrongOutcome:
-      "The pupil has an idea but cannot explain how the input, variable, and output work together.",
-    projectLink: "https://makecode.microbit.org/",
-  },
+    practiceTask: "Plan and build a larger Scratch project that uses at least a list, selection, iteration, and one custom block.",
+    challengeTask: "Extend the project with extra polish, clearer feedback, or a more efficient structure while keeping the code organised.",
+    keyQuestion: "What features make a larger programming project well structured and effective?",
+    misconception: "A larger project is not just a longer script. It must be structured carefully so that the logic stays clear and manageable.",
+    correctOutcome: "The final project is organised, functional, and shows secure use of advanced programming ideas.",
+    wrongOutcome: "The project contains some advanced features, but the structure is unclear, the logic is weak, or the parts do not work together reliably.",
+    projectLink: "https://scratch.mit.edu/"
+  }
 ];
 
 const quizBank: Record<number, QuizQuestion[]> = {
   1: [
     {
-      prompt: "What is a variable in programming?",
+      prompt: "What does sequence mean in programming?",
+      options: [
+        "The order in which instructions run",
+        "A type of sprite costume",
+        "A way to store many values",
+        "A block that repeats forever"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why must computer instructions be precise?",
+      options: [
+        "Because computers do exactly what they are told",
+        "Because computers can guess missing steps",
+        "Because order does not matter",
+        "Because precise code only matters in games"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which action best demonstrates sequencing?",
+      options: [
+        "Placing commands in the correct order",
+        "Choosing a brighter backdrop",
+        "Adding more sprites to the stage",
+        "Changing the font of a title"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is likely to happen if two key instructions are swapped?",
+      options: [
+        "The output may change or fail",
+        "The project will always improve",
+        "The variable will delete itself",
+        "The code will become a list"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why are humans often better than computers at dealing with vague instructions?",
+      options: [
+        "Humans can infer meaning from context",
+        "Humans only follow one instruction at a time",
+        "Humans never make mistakes",
+        "Humans always think in code"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which term best describes a clear set of steps for solving a problem?",
+      options: [
+        "Algorithm",
+        "Costume",
+        "Monitor",
+        "Broadcast"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "A programmer writes unclear instructions. What is the biggest risk?",
+      options: [
+        "The computer produces the wrong outcome",
+        "The sprite becomes invisible forever",
+        "The project saves automatically",
+        "The keyboard stops working"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which statement is true about sequence?",
+      options: [
+        "Even a small change in order can change the result",
+        "Sequence is only important in maths",
+        "Sequence does not matter once code runs",
+        "Sequence and repetition are exactly the same"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a pupil do when a sequence is not working?",
+      options: [
+        "Check the order of the instructions carefully",
+        "Delete every block immediately",
+        "Ignore the output and keep going",
+        "Change the project title"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "The main idea of this lesson is:",
+      options: [
+        "Computers need exact, correctly ordered instructions",
+        "Variables are more important than sequence",
+        "Every program must use lists",
+        "Precision is only needed for advanced coders"
+      ],
+      answer: 0
+    }
+  ],
+  2: [
+    {
+      prompt: "What is a variable?",
       options: [
         "A named place that stores a value",
-        "A type of sprite costume",
-        "A sound effect",
-        "A backdrop tool",
+        "A block that creates a sprite",
+        "A type of sound effect",
+        "A loop that never stops"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Which is the best example of a game variable?",
-      options: ["score", "stage colour", "sprite costume design", "pen colour only"],
-      answer: 0,
-    },
-    {
-      prompt: "Why are variables useful in games?",
+      prompt: "Why is tracing useful?",
       options: [
-        "They track values that change while the game runs",
-        "They make sprites larger automatically",
-        "They stop all bugs",
-        "They replace all events",
+        "It helps a programmer follow how values change",
+        "It makes the project run faster automatically",
+        "It removes the need for testing",
+        "It turns conditions into loops"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Which value is most likely to change during play?",
-      options: ["lives", "project title", "teacher name", "computer brand"],
-      answer: 0,
-    },
-    {
-      prompt: "What should a pupil understand about a variable?",
+      prompt: "What does set counter to 0 do?",
       options: [
-        "It stores information that can change",
-        "It is always fixed forever",
-        "It only stores pictures",
-        "It only works in maths projects",
+        "Gives the variable an exact starting value",
+        "Adds 0 repeatedly",
+        "Deletes the variable",
+        "Hides the variable monitor"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Which of these is not usually tracked by a variable in a game?",
-      options: ["the classroom door", "score", "timer", "health"],
-      answer: 0,
+      prompt: "What does change counter by 1 do?",
+      options: [
+        "Adds 1 to the current value",
+        "Resets the value to 1 every time",
+        "Creates a second variable",
+        "Turns the variable into text"
+      ],
+      answer: 0
     },
     {
-      prompt: "If a game needs to remember points, what should it use?",
-      options: ["a variable", "a backdrop", "a costume", "a pen stamp"],
-      answer: 0,
+      prompt: "Which value is being traced in a variable program?",
+      options: [
+        "The current stored value as code runs",
+        "The colour of the stage",
+        "The name of the project",
+        "The size of the browser window"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why are variables important in programs?",
+      options: [
+        "They allow data to change while the program runs",
+        "They stop all bugs from happening",
+        "They replace every other block",
+        "They only make code look neater"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a programmer do after changing a value in code?",
+      options: [
+        "Predict and then test the new outcome",
+        "Assume the result will stay the same",
+        "Delete the variable",
+        "Replace it with a list"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which statement is correct?",
+      options: [
+        "A variable can be set, changed, and checked",
+        "A variable is always fixed forever",
+        "A variable only stores pictures",
+        "A variable is the same as a loop"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is meant by program flow?",
+      options: [
+        "How the program moves from one instruction or value change to the next",
+        "How quickly the computer starts up",
+        "How bright the monitor looks",
+        "How many sprites are on the stage"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "The key focus of this lesson is:",
+      options: [
+        "Using and tracing variables through a program",
+        "Building a title screen",
+        "Recording sounds in Scratch",
+        "Changing a sprite costume"
+      ],
+      answer: 0
+    }
+  ],
+  3: [
+    {
+      prompt: "What is selection in programming?",
+      options: [
+        "Choosing a path based on a condition",
+        "Repeating code many times",
+        "Saving a project to the cloud",
+        "Drawing a sprite on the stage"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What does an if statement do?",
+      options: [
+        "Runs code only when a condition is true",
+        "Runs code forever",
+        "Stores many values in one place",
+        "Changes a variable at random"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "A condition in Scratch usually evaluates as:",
+      options: [
+        "True or false",
+        "Fast or slow",
+        "Large or small",
+        "Private or public"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why does selection make programs more interactive?",
+      options: [
+        "Because the program can respond differently in different situations",
+        "Because it removes the need for variables",
+        "Because it makes every script identical",
+        "Because it hides all outputs"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is needed inside an if statement?",
+      options: [
+        "A condition to test",
+        "A list of student names",
+        "A costume number only",
+        "A random backdrop"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which is a good example of selection?",
+      options: [
+        "If score = 10, show 'You win'",
+        "Repeat move 10 steps",
+        "Set timer to 0",
+        "Add a new sprite"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What happens if the condition is false?",
+      options: [
+        "The code inside the if block does not run",
+        "The whole project is deleted",
+        "Every other block stops forever",
+        "The variable becomes a list"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which word best describes the two possible outcomes of a condition?",
+      options: [
+        "Branch",
+        "Costume",
+        "Backdrop",
+        "Coordinate"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why might a programmer use selection with a variable?",
+      options: [
+        "To make decisions based on stored values",
+        "To draw more accurate sprites",
+        "To save the project automatically",
+        "To stop all debugging"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "This lesson mainly teaches pupils to:",
+      options: [
+        "Use if statements to control program behaviour",
+        "Use lists to store answers",
+        "Create complex art in Scratch",
+        "Build a website"
+      ],
+      answer: 0
+    }
+  ],
+  4: [
+    {
+      prompt: "What does a comparison operator do?",
+      options: [
+        "Checks a relationship between values",
+        "Stores many values at once",
+        "Repeats code forever",
+        "Renames a sprite"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which is a comparison operator?",
+      options: [
+        "Greater than",
+        "Repeat",
+        "Broadcast",
+        "Clone"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What does AND mean in logic?",
+      options: [
+        "Both conditions must be true",
+        "Only one condition must be true",
+        "The condition becomes false",
+        "The program should stop"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What does OR mean in logic?",
+      options: [
+        "At least one condition must be true",
+        "Both conditions must be false",
+        "The variable must reset",
+        "The code repeats exactly ten times"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What does NOT do to a condition?",
+      options: [
+        "Reverses it",
+        "Stores it in a variable",
+        "Repeats it forever",
+        "Deletes the code"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why are logical operators useful?",
+      options: [
+        "They allow more precise and complex decisions",
+        "They replace every if statement",
+        "They only make code longer",
+        "They stop values from changing"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which condition is more complex?",
+      options: [
+        "score > 5 AND lives > 0",
+        "score = 0",
+        "say 'Hello'",
+        "move 10 steps"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "When should a programmer choose OR?",
+      options: [
+        "When either of two conditions should trigger the result",
+        "When both conditions must happen together",
+        "When the code should never run",
+        "When a loop must repeat a fixed number of times"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is the main risk of using AND and OR carelessly?",
+      options: [
+        "The program logic may not match the intended rule",
+        "The project cannot be saved",
+        "Variables will disappear",
+        "The stage will turn black"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "The central skill in this lesson is:",
+      options: [
+        "Building and testing precise conditions with operators",
+        "Drawing a better backdrop",
+        "Adding sounds to every sprite",
+        "Making the project open faster"
+      ],
+      answer: 0
+    }
+  ],
+  5: [
+    {
+      prompt: "What is iteration?",
+      options: [
+        "Repetition in code",
+        "A type of variable",
+        "A way to compare values",
+        "A method of storing many items"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is a count-controlled loop?",
+      options: [
+        "A loop that repeats a fixed number of times",
+        "A loop that always runs forever",
+        "A loop that stores values",
+        "A loop that only checks one condition"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why are loops efficient?",
+      options: [
+        "They reduce repeated code",
+        "They remove the need for testing",
+        "They make programs random",
+        "They automatically fix logic errors"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which Scratch block is count-controlled?",
+      options: [
+        "Repeat 10",
+        "If then",
+        "Make a list",
+        "Ask and wait"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is the main advantage of replacing repeated blocks with a loop?",
+      options: [
+        "The code becomes shorter and easier to maintain",
+        "The output always changes completely",
+        "The project no longer needs variables",
+        "The sprite becomes more colourful"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "If a pattern must happen six times, which construct is most suitable?",
+      options: [
+        "A repeat loop",
+        "A list",
+        "A forever loop with no reason",
+        "A custom block on its own"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a programmer check after creating a loop?",
+      options: [
+        "That it repeats the correct number of times",
+        "That the backdrop name changed",
+        "That the browser tab is correct",
+        "That the monitor is hidden"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why might copied code be weaker than a loop?",
+      options: [
+        "It is longer and harder to edit consistently",
+        "It always crashes Scratch",
+        "It cannot produce repetition",
+        "It turns conditions into variables"
+      ],
+      answer: 0
     },
     {
       prompt: "Which statement is true?",
       options: [
-        "Variables can increase, decrease, or reset",
-        "Variables are only for decoration",
-        "Variables cannot change once made",
-        "Variables are the same as sounds",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which word best matches what a variable does?",
-      options: ["stores", "draws", "hides", "deletes"],
-      answer: 0,
-    },
-    {
-      prompt: "In a racing game, which variable would make most sense?",
-      options: ["lap count", "screen brightness", "desk number", "project thumbnail"],
-      answer: 0,
-    },
-  ],
-  2: [
-    {
-      prompt: "What does set score to 0 do?",
-      options: [
-        "Gives score an exact value",
-        "Adds 0 forever",
-        "Deletes the variable",
-        "Makes the variable invisible only",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What does change score by 1 do?",
-      options: [
-        "Adds 1 to the current value",
-        "Always returns the score to 1",
-        "Creates a new variable",
-        "Stops the game",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "When is set usually most useful?",
-      options: [
-        "At the start of a game",
-        "When drawing a backdrop",
-        "When renaming a sprite only",
-        "When exporting a file",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "When is change usually most useful?",
-      options: [
-        "When the value needs to go up or down during play",
-        "When the project is closed",
-        "When the sprite is chosen",
-        "When a background is imported",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "A pupil wants points to begin at zero every time. Which block is best?",
-      options: ["set points to 0", "change points by 0", "hide variable", "show variable"],
-      answer: 0,
-    },
-    {
-      prompt: "What is the main difference between set and change?",
-      options: [
-        "Set replaces the value, change adjusts it",
-        "Set and change always do exactly the same job",
-        "Set is for sound and change is for movement",
-        "Set deletes and change saves",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "If a score should go down by 1, which block is most suitable?",
-      options: ["change score by -1", "set score to -1", "show score", "make a variable"],
-      answer: 0,
-    },
-    {
-      prompt: "What problem happens if a score is set to 0 every time a sprite is clicked?",
-      options: [
-        "The score keeps resetting instead of building up",
-        "The score becomes invisible only",
-        "The sprite disappears",
-        "The project cannot save",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which statement shows correct variable thinking?",
-      options: [
-        "Set gives a start point and change updates from there",
-        "Set should always replace change",
-        "Change should always replace set",
-        "Variables never need start values",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "A counter that rises with every click mostly needs which block during the game?",
-      options: ["change", "set only", "hide", "broadcast only"],
-      answer: 0,
-    },
-  ],
-  3: [
-    {
-      prompt: "What should a score variable usually do at the start of a game?",
-      options: ["start at 0", "start at 100 automatically", "hide forever", "delete itself"],
-      answer: 0,
-    },
-    {
-      prompt: "When should a score increase?",
-      options: [
-        "When the correct event happens",
-        "All the time",
-        "Only when the green flag is clicked",
-        "When the project closes",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which is a good event for increasing score?",
-      options: [
-        "Collecting an object",
-        "Changing the desktop wallpaper",
-        "Opening Scratch",
-        "Typing the project title",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Why might a score rise too quickly by mistake?",
-      options: [
-        "The same event is being counted repeatedly",
-        "The variable is named clearly",
-        "The score started at zero",
-        "The project was tested",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is the best reason to use a score system?",
-      options: [
-        "It tracks success in the game",
-        "It replaces the player",
-        "It makes code impossible to debug",
-        "It removes the need for events",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "If a sprite is collected once, what should often happen next?",
-      options: [
-        "It should move or hide so it is not counted endlessly",
-        "Nothing at all",
-        "The project should shut down",
-        "The score should reset immediately",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is a target score?",
-      options: [
-        "A value the player aims to reach",
-        "The colour of the score monitor",
-        "A type of costume",
-        "A sound effect",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which statement is strongest?",
-      options: [
-        "A score variable should match the player’s successful actions",
-        "A score should rise randomly to keep the game interesting",
-        "A score should never change after the start",
-        "A score is only for advanced adult programmers",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What would make a score system feel unfair?",
-      options: [
-        "Points appear without the player doing the right action",
-        "The score starts at zero",
-        "The game shows the score clearly",
-        "The code uses events",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is the main idea of this lesson?",
-      options: [
-        "Using a variable to track score in a game",
-        "Drawing a new background",
-        "Adding many costumes",
-        "Creating text boxes only",
-      ],
-      answer: 0,
-    },
-  ],
-  4: [
-    {
-      prompt: "What does a lives variable usually track?",
-      options: [
-        "How many chances the player has left",
-        "The number of backdrops",
-        "The sound volume",
-        "The name of the player",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is a sensible start value for lives in a simple game?",
-      options: ["3", "undefined forever", "1000 always", "no value at all"],
-      answer: 0,
-    },
-    {
-      prompt: "When should lives decrease?",
-      options: [
-        "When the player makes a mistake or hits danger",
-        "Whenever the mouse moves",
-        "At random",
-        "Only when the program opens",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which block would often reduce lives by one?",
-      options: ["change lives by -1", "set lives to 100", "hide lives", "make a list"],
-      answer: 0,
-    },
-    {
-      prompt: "What should often happen when lives reach 0?",
-      options: [
-        "The game should end or show a lose message",
-        "The score should become a backdrop",
-        "The keyboard should lock",
-        "The variable should become a sound",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "How is lives different from score?",
-      options: [
-        "Lives often measure mistakes, while score often measures success",
-        "Lives and score always mean exactly the same thing",
-        "Lives cannot be variables",
-        "Score cannot be used in games",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What would be poor design for a lives system?",
-      options: [
-        "Lives drop without any clear event causing it",
-        "Lives begin at a chosen start value",
-        "Lives reduce after touching danger",
-        "Lives are checked with a condition",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Why do lives increase challenge in a game?",
-      options: [
-        "They make mistakes matter",
-        "They remove all rules",
-        "They stop the player from learning",
-        "They replace all events",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which condition is useful for a lives system?",
-      options: ["if lives = 0", "if backdrop = blue", "if pen down", "if costume = 1 always"],
-      answer: 0,
-    },
-    {
-      prompt: "What is the lesson mainly about?",
-      options: [
-        "Using a variable to track mistakes or damage",
-        "Designing a title screen only",
-        "Recording voices",
-        "Changing fonts",
-      ],
-      answer: 0,
-    },
-  ],
-  5: [
-    {
-      prompt: "What does a condition do?",
-      options: [
-        "Checks whether something is true or false",
-        "Draws a sprite",
-        "Creates a new project automatically",
-        "Deletes variables",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which comparison could be used with a score variable?",
-      options: ["score = 10", "show score", "make a variable", "say score"],
-      answer: 0,
-    },
-    {
-      prompt: "Why use a variable inside an if statement?",
-      options: [
-        "To make a decision based on the value",
-        "To colour the stage",
-        "To rename the sprite",
-        "To avoid using logic",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What might happen if score = 10 is true?",
-      options: [
-        "The game could show a winning message",
-        "The computer turns off",
-        "All variables disappear",
-        "The class changes automatically",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which symbol means greater than?",
-      options: [">", "=", "+", "/"],
-      answer: 0,
-    },
-    {
-      prompt: "What is needed before a variable can control game flow?",
-      options: [
-        "It must be compared in a condition",
-        "It must be hidden forever",
-        "It must be turned into text",
-        "It must be deleted",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "If lives < 1, what might that mean in a game?",
-      options: [
-        "The player has no lives left",
-        "The score is increasing",
-        "The sprite should move faster",
-        "The game has no variables",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which statement is correct?",
-      options: [
-        "Variables and conditions work together to control outcomes",
-        "Variables remove the need for all conditions",
-        "Conditions cannot use variables",
-        "A game can never use both score and logic",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What mistake should pupils avoid?",
-      options: [
-        "Thinking the variable alone makes the decision",
-        "Testing their code",
-        "Using a clear target value",
-        "Resetting a score at the start",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is the main focus of this lesson?",
-      options: [
-        "Using variables inside decisions",
-        "Changing costume colours",
-        "Importing sounds only",
-        "Creating a username screen",
-      ],
-      answer: 0,
-    },
-  ],
-  6: [
-    {
-      prompt: "Why is planning a game important?",
-      options: [
-        "It helps the code stay logical and organised",
-        "It makes coding unnecessary",
-        "It removes all mistakes instantly",
-        "It is only for teachers",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What should be planned before building?",
-      options: [
-        "Variables, rules, and win/lose conditions",
-        "Only the sprite colour",
-        "Only the classroom seating plan",
-        "Only the computer password",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "A game plan should explain what?",
-      options: [
-        "What the player is trying to do",
-        "Which desk is nearest the wall",
-        "How loud the room is",
-        "What brand the monitor is",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is an algorithm?",
-      options: [
-        "A sequence of steps for a process or program",
-        "A kind of background image",
-        "A sound effect",
-        "A projector cable",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Why is planning even more important with two variables?",
-      options: [
-        "Because the logic becomes more complex",
-        "Because two variables cannot be used together",
-        "Because Scratch will block the project",
-        "Because planning is only for maths",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What could a good plan include?",
-      options: [
-        "When the score rises and when lives fall",
-        "Only the teacher name",
-        "Only the colour theme",
-        "Only how to log in",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is poor planning likely to cause?",
-      options: [
-        "Confusing or messy code",
-        "Automatic success",
-        "Better debugging immediately",
-        "Perfect logic without testing",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which statement best matches this lesson?",
-      options: [
-        "Good programmers think before they build",
-        "Real programmers never plan",
-        "Planning stops creativity completely",
-        "Variables do not need rules",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "A game idea has score but no lose state. What is missing?",
-      options: ["Part of the design thinking", "A mouse", "A costume", "A list block"],
-      answer: 0,
-    },
-    {
-      prompt: "What is the main focus here?",
-      options: [
-        "Planning a variable-based game before coding",
-        "Recording audio",
-        "Making title art only",
-        "Changing desktop settings",
-      ],
-      answer: 0,
-    },
-  ],
-  7: [
-    {
-      prompt: "What does debugging mean?",
-      options: [
-        "Finding and fixing problems in code",
-        "Making a project look pretty",
-        "Deleting all variables",
-        "Adding random blocks quickly",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What should a pupil check first in a broken variable system?",
-      options: [
-        "Whether the starting value and changes are correct",
-        "The classroom temperature",
-        "The stage colour only",
-        "The font on the screen",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Why is it good to change one thing at a time?",
-      options: [
-        "So you know what caused the fix",
-        "So the bug becomes harder to find",
-        "So the project gets more random",
-        "So testing is no longer needed",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which is an example of a variable bug?",
-      options: [
-        "Score rises too many times from one event",
-        "The desk is slightly untidy",
-        "The pupil changed their seat",
-        "The mouse pad moved",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "If a winning message appears too early, what is worth checking?",
-      options: [
-        "The condition comparing the variable",
-        "The school logo",
-        "The laptop sticker",
-        "The browser window size",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which is the best debugging habit?",
-      options: [
-        "Test, observe, change one part, and retest",
-        "Guess wildly and hope",
-        "Delete everything immediately",
-        "Never run the project",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is a logic error?",
-      options: [
-        "The code runs but behaves incorrectly",
-        "The screen is dusty",
-        "The internet is fast",
-        "The project has a title",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What mistake should pupils avoid during debugging?",
-      options: [
-        "Changing many things at once without understanding the cause",
-        "Testing carefully",
-        "Checking conditions",
-        "Watching the variable value",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Why is debugging part of programming?",
-      options: [
-        "Because programs must be tested and improved",
-        "Because code always works perfectly first time",
-        "Because variables should never be used",
-        "Because planning is not needed",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "This lesson is mainly about:",
-      options: [
-        "Testing and fixing variable logic",
-        "Creating fancy title screens only",
-        "Choosing music tracks",
-        "Changing password settings",
-      ],
-      answer: 0,
-    },
-  ],
-  8: [
-    {
-      prompt: "In physical computing, what is an input?",
-      options: [
-        "Something the device receives or detects",
-        "A sound the device makes",
-        "A picture on the screen",
-        "The project name",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is an output on a micro:bit?",
-      options: [
-        "Something the device does in response, such as showing LEDs",
-        "A desk in the classroom",
-        "The browser tab",
-        "The code title only",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is the emulator used for?",
-      options: [
-        "Testing the program on screen",
-        "Replacing all code",
-        "Printing worksheets",
-        "Changing the computer keyboard",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which block often appears at the start of a MakeCode project?",
-      options: ["on start", "game over", "paint stage", "rename class"],
-      answer: 0,
-    },
-    {
-      prompt: "What is a simple first output for a micro:bit?",
-      options: [
-        "An LED pattern",
-        "A full website",
-        "A printed certificate",
-        "A speaker tower",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which sequence is correct?",
-      options: [
-        "input → process → output",
-        "output → input → process",
-        "process → output → input only",
-        "variable → costume → microphone",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "How is a micro:bit project different from a simple Scratch display?",
-      options: [
-        "It controls a physical device and its outputs",
-        "It cannot use code",
-        "It has no events",
-        "It never needs testing",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What should pupils understand in this lesson?",
-      options: [
-        "Devices still follow precise instructions from code",
-        "Devices always know what to do without code",
-        "Physical computing removes the need for logic",
-        "Inputs and outputs are the same thing",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is the main purpose of the LED grid in early lessons?",
-      options: [
-        "To provide visible output",
-        "To store class names",
-        "To hide variables",
-        "To remove buttons",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "This lesson is mainly about:",
-      options: [
-        "Understanding input, process, and output on micro:bit",
-        "Drawing a poster",
-        "Editing a video",
-        "Making a spreadsheet",
-      ],
-      answer: 0,
-    },
-  ],
-  9: [
-    {
-      prompt: "What does if... then... else allow a program to do?",
-      options: [
-        "Choose between different outcomes",
-        "Delete the project",
-        "Avoid all input",
-        "Replace all outputs",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "When does the else path run?",
-      options: [
-        "When the condition is false",
-        "When the condition is true",
-        "Before the code starts",
-        "Only after saving",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which input is useful for a simple MakeCode condition?",
-      options: ["button A", "desk colour", "teacher email", "font size"],
-      answer: 0,
-    },
-    {
-      prompt: "Why is selection important in physical computing?",
-      options: [
-        "It lets the device react differently depending on what happens",
-        "It removes all need for code",
-        "It makes the hardware invisible",
-        "It stops all tests",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What should happen in a good else branch?",
-      options: [
-        "A meaningful alternative output",
-        "Nothing planned at all",
-        "A classroom bell",
-        "A deleted variable",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What does flow mean in this lesson?",
-      options: [
-        "The order and path the code follows",
-        "How bright the screen is",
-        "How fast the internet is",
-        "How many pupils are present",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "If button A is pressed then show a heart, else show a square. What changes the output?",
-      options: ["The condition result", "The project title", "The browser name", "The device colour"],
-      answer: 0,
-    },
-    {
-      prompt: "What should pupils avoid misunderstanding?",
-      options: [
-        "Else is an important second path, not an optional decoration",
-        "Else means repeat forever",
-        "Else is only for adults",
-        "Else creates a variable automatically",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which statement is strongest?",
-      options: [
-        "Selection controls the device’s behaviour logically",
-        "Selection is only for making the code longer",
-        "Selection removes all sensors",
-        "Selection is never useful in real devices",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "This lesson mainly develops:",
-      options: [
-        "decision-making in MakeCode",
-        "sound recording",
-        "typing speed",
-        "spreadsheet formulas",
-      ],
-      answer: 0,
-    },
-  ],
-  10: [
-    {
-      prompt: "What is a sensor input?",
-      options: [
-        "Information the device detects from actions or movement",
-        "A decoration on the stage",
-        "A saved screenshot",
-        "A spreadsheet row",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Which is a built-in input on a micro:bit?",
-      options: ["button press", "printer cable", "monitor stand", "desk drawer"],
-      answer: 0,
-    },
-    {
-      prompt: "What can the accelerometer detect?",
-      options: ["movement or gesture", "font choice", "browser theme", "school logo"],
-      answer: 0,
-    },
-    {
-      prompt: "Why are buttons useful in early physical computing projects?",
-      options: [
-        "They provide a clear and simple input",
-        "They replace all variables",
-        "They turn outputs into inputs",
-        "They stop code from running",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "Why might a project use both a button and a shake gesture?",
-      options: [
-        "To allow different inputs to produce different responses",
-        "To make the code less clear",
-        "To avoid using output",
-        "To stop the emulator working",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What is a trigger?",
-      options: [
-        "The event that causes code to respond",
-        "A type of background image",
-        "A timer title",
-        "A variable name only",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What does interactive mean in this lesson?",
-      options: [
-        "The device responds to what the user does",
-        "The device ignores all inputs",
-        "The project only shows text once",
-        "The code cannot change",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "If button A and shake both have outputs, what must the code do?",
-      options: [
-        "Link each input to the correct response",
-        "Use the same output for everything without reason",
-        "Delete the inputs",
-        "Avoid testing",
-      ],
-      answer: 0,
-    },
-    {
-      prompt: "What mistake should pupils avoid?",
-      options: [
-        "Thinking the micro:bit reacts without programmed triggers",
-        "Using more than one input",
-        "Testing in the emulator",
-        "Naming a project clearly",
-      ],
-      answer: 0,
+        "A loop can create the same outcome with fewer blocks",
+        "A loop is only useful in advanced text coding",
+        "A loop removes the need for all sequence",
+        "A loop is the same as a list"
+      ],
+      answer: 0
     },
     {
       prompt: "This lesson mainly focuses on:",
       options: [
-        "using buttons and motion as inputs",
-        "editing a web page",
-        "drawing charts",
-        "setting a classroom timer only",
+        "Using count-controlled loops for efficiency",
+        "Designing logos",
+        "Recording narration",
+        "Creating online accounts"
       ],
-      answer: 0,
-    },
+      answer: 0
+    }
   ],
-  11: [
+  6: [
     {
-      prompt: "What is a variable useful for in MakeCode?",
+      prompt: "What does it mean to combine constructs?",
       options: [
-        "Tracking a changing value such as steps or counts",
-        "Changing the desk position",
-        "Printing worksheets",
-        "Creating internet access",
+        "Use more than one programming idea together to solve a problem",
+        "Place every block in one script at random",
+        "Only use loops",
+        "Only use variables"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "If a project counts shakes, what should usually happen first?",
+      prompt: "Which construct is best for storing changing data?",
       options: [
-        "Set the variable to 0 at the start",
-        "Hide the variable and never change it",
-        "Delete the condition",
-        "Remove the input block",
+        "Variable",
+        "Loop",
+        "Backdrop",
+        "Sound"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "What does change steps by 1 do?",
+      prompt: "Which construct is best for decision-making?",
       options: [
-        "Adds one to the current count",
-        "Always returns the value to 1",
-        "Deletes the value",
-        "Turns the value into a picture",
+        "Selection",
+        "Sequence only",
+        "Costume",
+        "Broadcast alone"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Why compare a variable to a target value?",
+      prompt: "Why do programmers combine constructs?",
       options: [
-        "So the device can decide when to react",
-        "So the code becomes longer only",
-        "So the output disappears forever",
-        "So the input no longer matters",
+        "Because real problems usually need more than one kind of logic",
+        "Because one construct is never allowed",
+        "Because Scratch requires it in every project",
+        "Because it makes the code decorative"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Which comparison fits a milestone output?",
-      options: ["steps > 9", "show leds", "on start", "button A only"],
-      answer: 0,
+      prompt: "What is a strong first step before building a solution?",
+      options: [
+        "Plan which constructs are needed",
+        "Add as many sprites as possible",
+        "Choose a random background",
+        "Hide all variables"
+      ],
+      answer: 0
     },
     {
-      prompt: "What is the relationship between the sensor and the variable?",
+      prompt: "Why is testing important when combining constructs?",
       options: [
-        "The sensor detects an event; the variable counts it",
-        "The variable detects the movement and the sensor stores it",
-        "They do the same job",
-        "Neither is needed in physical computing",
+        "It checks whether the different parts work together",
+        "It makes the code shorter automatically",
+        "It removes the need for debugging",
+        "It turns loops into conditions"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Why is this lesson an important Year 6 link?",
+      prompt: "What is the main purpose of variables, selection, and iteration together?",
       options: [
-        "It combines variable thinking with physical input and logic",
-        "It removes the need for all previous learning",
-        "It focuses only on decoration",
-        "It replaces MakeCode with spreadsheets",
+        "To build a logical solution to a problem",
+        "To make the project save online",
+        "To stop the stage from changing",
+        "To create faster internet"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "If a micro:bit should celebrate at 10 counts, what is required?",
+      prompt: "What might show weak problem solving?",
       options: [
-        "A condition using the variable",
-        "A new school logo",
-        "A desktop wallpaper",
-        "A printed booklet",
+        "Adding blocks without a clear reason",
+        "Explaining why each part is needed",
+        "Testing each section step by step",
+        "Improving repeated code"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "What would show weak understanding?",
+      prompt: "What should a pupil be able to do after finishing a combined-constructs task?",
       options: [
-        "Thinking the sensor and variable are the same thing",
-        "Explaining that movement changes the count",
-        "Using a start value of zero",
-        "Testing the response",
+        "Explain why each construct was chosen",
+        "Only describe the colour scheme",
+        "Rename every sprite",
+        "Delete any code that looks complex"
       ],
-      answer: 0,
+      answer: 0
     },
     {
       prompt: "This lesson is mainly about:",
       options: [
-        "using a variable with logic in MakeCode",
-        "adding titles only",
-        "saving screenshots",
-        "creating pupil accounts",
+        "Solving problems by combining key programming constructs",
+        "Building a poster in Scratch",
+        "Using one block repeatedly without logic",
+        "Changing fonts"
       ],
-      answer: 0,
-    },
+      answer: 0
+    }
   ],
-  12: [
+  7: [
     {
-      prompt: "What are the three key parts of a simple step counter?",
+      prompt: "What is the main goal of an assessment project?",
       options: [
-        "input, variable, output",
-        "music, costume, backdrop",
-        "mouse, keyboard, monitor",
-        "teacher, desk, board",
+        "To show independent understanding and application of learning",
+        "To copy the teacher’s exact example only",
+        "To use the most colourful sprites possible",
+        "To avoid testing"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "Which input might a step counter use on micro:bit?",
-      options: ["movement or shake", "speaker volume", "font style", "screen size"],
-      answer: 0,
-    },
-    {
-      prompt: "What should the variable usually track?",
-      options: ["number of detected steps", "colour of the LEDs", "name of the project", "device battery type"],
-      answer: 0,
-    },
-    {
-      prompt: "Why does a step counter need output?",
+      prompt: "Which set of constructs should appear in this assessment?",
       options: [
-        "So the user can see the result or progress",
-        "So the variable can be deleted",
-        "So the micro:bit stops working",
-        "So the code has no purpose",
+        "Sequence, variable, selection, and iteration",
+        "Only sequence and sound",
+        "Lists only",
+        "Custom blocks only"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "What is the value of planning before building the step counter?",
+      prompt: "Why is planning important in an assessment project?",
       options: [
-        "It makes the system clearer and easier to implement",
-        "It replaces all code forever",
-        "It prevents any testing",
-        "It removes the need for logic",
+        "It helps the logic stay clear and purposeful",
+        "It removes the need to code",
+        "It guarantees full marks automatically",
+        "It makes the project shorter than required"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "What might be a useful extension to a step counter?",
+      prompt: "What should a pupil do after building each main section?",
       options: [
-        "Celebrate when a target count is reached",
-        "Delete the count every second randomly",
-        "Remove all outputs",
-        "Ignore movement inputs",
+        "Test it",
+        "Delete it",
+        "Rename the whole project",
+        "Add random effects"
       ],
-      answer: 0,
+      answer: 0
+    },
+    {
+      prompt: "Which statement is strongest?",
+      options: [
+        "Logical quality matters more than decoration alone",
+        "A good background is the most important feature",
+        "Projects should never be debugged",
+        "All assessment tasks need lists"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What makes a project independent?",
+      options: [
+        "The pupil can explain and justify their own code choices",
+        "The pupil copies every block without understanding",
+        "The project uses three backdrops",
+        "The teacher builds the difficult parts"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why is refinement part of the project process?",
+      options: [
+        "Because programmers improve and polish their work after testing",
+        "Because the first version is always perfect",
+        "Because refinement only changes colours",
+        "Because code cannot be evaluated"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What would weaken an assessment project?",
+      options: [
+        "Using key constructs without understanding them",
+        "Testing carefully",
+        "Explaining the purpose clearly",
+        "Planning the structure first"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is evaluation in this context?",
+      options: [
+        "Reviewing how well the project meets the brief",
+        "Changing the sprite size",
+        "Downloading the project",
+        "Printing the code"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "This lesson mainly develops:",
+      options: [
+        "Independent programming competence",
+        "Poster design skills",
+        "Data entry skills",
+        "Typing speed"
+      ],
+      answer: 0
+    }
+  ],
+  8: [
+    {
+      prompt: "What is decomposition?",
+      options: [
+        "Breaking a large problem into smaller parts",
+        "Repeating instructions many times",
+        "Comparing two values",
+        "Storing several items in a list"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is a subroutine in Scratch usually created as?",
+      options: [
+        "A custom block",
+        "A backdrop",
+        "A variable monitor",
+        "A costume"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why are custom blocks useful?",
+      options: [
+        "They organise and reuse code",
+        "They replace every script in a project",
+        "They stop all bugs permanently",
+        "They are only used for artwork"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What problem does decomposition help solve?",
+      options: [
+        "Managing complexity in larger programs",
+        "Changing the keyboard language",
+        "Saving projects more quickly",
+        "Making the screen brighter"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a programmer do before making a custom block?",
+      options: [
+        "Identify a repeated or self-contained task",
+        "Delete all other scripts",
+        "Hide every variable",
+        "Choose a new font"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which statement is true about subroutines?",
+      options: [
+        "They make code easier to read and maintain",
+        "They only work in tiny projects",
+        "They remove the need for sequence",
+        "They cannot be called more than once"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why might a larger script become difficult to manage?",
+      options: [
+        "Everything is placed in one long section with no structure",
+        "It uses a clear variable name",
+        "It is tested carefully",
+        "It contains comments"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What does reusable mean in programming?",
+      options: [
+        "A section of code can be used again where needed",
+        "A sprite can only be used once",
+        "A list can be saved twice",
+        "A variable never changes"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is the strongest reason to use a custom block?",
+      options: [
+        "To give a clear job a clear name and structure",
+        "To make the stage look busier",
+        "To avoid all planning",
+        "To hide the logic from the user"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "This lesson mainly teaches pupils to:",
+      options: [
+        "Use decomposition and custom blocks to structure code",
+        "Replace every variable with a list",
+        "Create a website menu",
+        "Record audio effects"
+      ],
+      answer: 0
+    }
+  ],
+  9: [
+    {
+      prompt: "What is condition-controlled iteration?",
+      options: [
+        "Repetition that continues until a condition is met",
+        "A loop that always repeats a fixed number of times",
+        "A variable that stores several answers",
+        "A custom block with no inputs"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which Scratch loop is often condition-controlled?",
+      options: [
+        "Repeat until",
+        "Repeat 10",
+        "Wait 1 seconds",
+        "Go to x: y:"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What causes a condition-controlled loop to stop?",
+      options: [
+        "Its stopping condition becomes true",
+        "The stage background changes",
+        "A sprite costume changes",
+        "The project title is edited"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why is a condition-controlled loop useful?",
+      options: [
+        "Because some tasks should continue until a target or event occurs",
+        "Because it removes all need for variables",
+        "Because it is shorter than every other block",
+        "Because it always runs faster than any other solution"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is an infinite loop?",
+      options: [
+        "A loop that never reaches its stopping point",
+        "A loop with exactly ten repetitions",
+        "A list that stores too many values",
+        "A variable set to zero"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "How can a programmer avoid an infinite loop?",
+      options: [
+        "Make sure the condition can change and eventually be met",
+        "Use more backdrops",
+        "Hide the variable monitor",
+        "Delete the input blocks"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "When is condition-controlled iteration better than count-controlled iteration?",
+      options: [
+        "When the program should stop based on logic rather than a fixed number",
+        "When the answer is always 5",
+        "When no condition is available",
+        "When the task should never end"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a pupil do after creating a repeat until loop?",
+      options: [
+        "Test whether it stops at the correct time",
+        "Assume it works without running it",
+        "Replace it with copied code",
+        "Delete the condition"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which statement is true?",
+      options: [
+        "A loop may depend on logic rather than a set count",
+        "All loops work in exactly the same way",
+        "Condition-controlled loops never need variables",
+        "Repeat until means repeat forever"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "The main focus of this lesson is:",
+      options: [
+        "Using loops that continue until a condition is reached",
+        "Only drawing patterns on the stage",
+        "Naming sprites",
+        "Creating a class register"
+      ],
+      answer: 0
+    }
+  ],
+  10: [
+    {
+      prompt: "What does it mean to evaluate loop types?",
+      options: [
+        "Compare them and justify which is most suitable",
+        "Use every loop in one script",
+        "Delete weaker code without explanation",
+        "Only check whether the code runs"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why might two different loops both work for one task?",
+      options: [
+        "Different constructs can sometimes produce similar outcomes",
+        "Scratch chooses a random result",
+        "Loops do not affect the program",
+        "Variables and loops are the same"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What makes one loop more suitable than another?",
+      options: [
+        "It matches the logic of the problem more clearly and efficiently",
+        "It has a nicer colour",
+        "It uses more blocks",
+        "It appears first in the menu"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a pupil include in a justification?",
+      options: [
+        "A reason linked to the task and the logic",
+        "A comment about their favourite sprite",
+        "Only the teacher’s opinion",
+        "A description of the backdrop"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which statement shows evaluation rather than description?",
+      options: [
+        "A repeat until loop is better here because the number of repetitions is unknown",
+        "This code has a loop in it",
+        "The sprite moves on screen",
+        "The project uses Scratch"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why is efficiency part of loop evaluation?",
+      options: [
+        "A simpler, more suitable solution is usually easier to maintain",
+        "Efficiency only matters in websites",
+        "Efficient code never needs testing",
+        "Efficiency is about adding more blocks"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "If a pattern repeats exactly 8 times, which loop is often more suitable?",
+      options: [
+        "A count-controlled loop",
+        "A repeat until loop based on score",
+        "A forever loop",
+        "A list"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "If a chase continues until the player is caught, which loop is often more suitable?",
+      options: [
+        "A condition-controlled loop",
+        "A repeat 5 loop",
+        "A list block",
+        "A set variable block"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is the danger of choosing a loop without evaluation?",
+      options: [
+        "The solution may work but still be weak or unsuitable",
+        "The computer will refuse to run it",
+        "The project cannot be saved",
+        "All variables will reset"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "This lesson mainly develops:",
+      options: [
+        "Comparison and justification of loop choices",
+        "Artwork skills",
+        "Typing accuracy",
+        "Internet research"
+      ],
+      answer: 0
+    }
+  ],
+  11: [
+    {
+      prompt: "What is a list?",
+      options: [
+        "A data structure that stores multiple values",
+        "A loop that repeats forever",
+        "A comparison operator",
+        "A type of sprite"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why might a list be better than several separate variables?",
+      options: [
+        "It stores related data together more efficiently",
+        "It makes conditions unnecessary",
+        "It always removes bugs",
+        "It stops values from changing"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which task is well suited to a list?",
+      options: [
+        "Storing a set of quiz answers",
+        "Turning a sprite around",
+        "Changing the page colour",
+        "Unlocking the teacher dashboard"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What can a programmer do with list items?",
+      options: [
+        "Add, read, and remove them",
+        "Only look at them",
+        "Only delete the whole list",
+        "Only use them in art projects"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What does a data structure help with?",
+      options: [
+        "Organising data",
+        "Changing sound volume",
+        "Connecting to Wi-Fi",
+        "Making the project public"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is an item in a list?",
+      options: [
+        "One value stored inside the list",
+        "The name of the list itself",
+        "A type of variable monitor",
+        "A custom block"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why are lists useful in larger projects?",
+      options: [
+        "They help manage multiple pieces of related information",
+        "They replace all loops",
+        "They stop the need for planning",
+        "They work only in tiny projects"
+      ],
+      answer: 0
     },
     {
       prompt: "Which statement is correct?",
       options: [
-        "A clear design shows how input, variable, and output connect",
-        "A good design does not need an algorithm",
-        "A device should be built without deciding the rules",
-        "Variables are not useful in physical computing",
+        "A list can hold many related values in one place",
+        "A list can only hold one value ever",
+        "A list is the same as a variable",
+        "A list cannot be changed by code"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "What would show good design thinking?",
+      prompt: "What should a pupil understand after this lesson?",
       options: [
-        "Explaining what happens at start, during movement, and at milestones",
-        "Choosing only a favourite colour",
-        "Typing code without a plan",
-        "Ignoring how the user sees the result",
+        "Why a list is suitable for storing collections of data",
+        "That lists only make projects look more advanced",
+        "That every project must use a list",
+        "That lists remove the need for selection"
       ],
-      answer: 0,
+      answer: 0
     },
     {
-      prompt: "What misconception should be avoided?",
+      prompt: "This lesson mainly focuses on:",
       options: [
-        "Thinking planning is separate from programming quality",
-        "Knowing that variables track values",
-        "Using output to show results",
-        "Choosing an input carefully",
+        "Using lists to store and manage multiple values",
+        "Building a poster",
+        "Changing project ownership",
+        "Recording narration"
       ],
-      answer: 0,
-    },
-    {
-      prompt: "The final lesson is mainly about:",
-      options: [
-        "designing a step counter system",
-        "creating a video title",
-        "building a spreadsheet graph",
-        "changing the teacher password",
-      ],
-      answer: 0,
-    },
+      answer: 0
+    }
   ],
+  12: [
+    {
+      prompt: "Why does a larger project need decomposition?",
+      options: [
+        "It helps organise the solution into manageable parts",
+        "It removes the need for code",
+        "It is only useful for artwork",
+        "It makes lists unnecessary"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which feature is most useful for storing many words or answers in a translate quiz?",
+      options: [
+        "A list",
+        "A single costume",
+        "A backdrop",
+        "A sound effect"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which feature is most useful for organising repeated logic in a larger project?",
+      options: [
+        "A custom block",
+        "A title screen",
+        "A random sprite",
+        "A paint editor"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why is selection important in a quiz project?",
+      options: [
+        "It checks answers and decides what feedback to give",
+        "It repeats code a fixed number of times",
+        "It stores all values automatically",
+        "It renames the stage"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Why is iteration useful in a larger project?",
+      options: [
+        "It helps repeat checks or actions efficiently",
+        "It removes every need for input",
+        "It stores questions permanently",
+        "It replaces all variables"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What should a pupil do while building a large project?",
+      options: [
+        "Test each section as it is built",
+        "Finish everything before testing once",
+        "Avoid changing any code",
+        "Only work on decoration first"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What makes a large project well structured?",
+      options: [
+        "Clear parts, logical flow, and organised code",
+        "Lots of colours and sound effects",
+        "As many sprites as possible",
+        "One very long script with no comments or planning"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "What is the value of evaluation at the end of the project?",
+      options: [
+        "It helps the programmer judge how well the design solved the problem",
+        "It deletes the old version automatically",
+        "It changes the scoring system at random",
+        "It replaces debugging"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "Which statement is strongest?",
+      options: [
+        "A larger project must be managed carefully so the logic stays clear",
+        "Large projects are just long scripts with more decoration",
+        "Lists are only for advanced adults",
+        "Subroutines are optional extras with no real purpose"
+      ],
+      answer: 0
+    },
+    {
+      prompt: "This final lesson mainly assesses:",
+      options: [
+        "Independent problem solving using advanced Scratch structures",
+        "Only typing speed",
+        "Only visual design",
+        "Only how many sprites were added"
+      ],
+      answer: 0
+    }
+  ]
 };
 
 function slugifyName(value: string) {
@@ -1750,7 +1858,7 @@ function normaliseName(value: string) {
 }
 
 function buildStorageKey(className: string, studentName: string) {
-  return `year6-${className}-${slugifyName(studentName)}`;
+  return `year7-${className}-${slugifyName(studentName)}`;
 }
 
 function getRegistry(): LearnerProfile[] {
@@ -2262,7 +2370,7 @@ export default function Home() {
                 color: pastel.title,
               }}
             >
-              APSR Year 6 Computing
+              APSR Year 7 Computing
             </h1>
             <p style={{ fontSize: 20, margin: 0, maxWidth: 860 }}>
               Variables in Scratch and sensing with Micro:bit. Choose an existing
@@ -2568,7 +2676,7 @@ export default function Home() {
                 color: pastel.title,
               }}
             >
-              APSR Year 6 Computing
+              APSR Year 7 Computing
             </h1>
 
             <p style={{ fontSize: 22, margin: "0 0 12px" }}>
